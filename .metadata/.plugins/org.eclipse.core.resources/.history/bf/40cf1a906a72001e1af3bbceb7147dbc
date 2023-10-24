@@ -59,8 +59,12 @@ public class ListaLigada {
 		
 		Elemento atual = primeiro;
 		
-		for(int i=0; i < posicao; i++) {
+		for(int i=1; i <= posicao; i++) {
+			System.out.println("No for");
 			
+			if(posicao == 1) {
+				break;
+			}
 			if(atual.getProximo() != null) {
 				atual = atual.getProximo();
 			}

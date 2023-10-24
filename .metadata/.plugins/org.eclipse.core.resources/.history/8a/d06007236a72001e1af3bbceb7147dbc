@@ -15,7 +15,7 @@ public class Programa {
 		System.out.println("Último: "+lista.getUltimo().getValor());
 		System.out.println("Tamanho: "+lista.getTamanho());
 		
-		System.out.println(lista.get(2).getValor());
+		System.out.println(lista.get(4).getValor());
 
 	}
 
