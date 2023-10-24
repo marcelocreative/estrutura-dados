@@ -1,0 +1,139 @@
+package com.mg.estruturadados.vetor;
+
+public class VetorObjetos {
+	
+	private Object[] elementos;
+	private int quantidadeElementosVetor;
+	
+	public VetorObjetos(int capacidade){
+		
+		this.elementos= new Object[capacidade];
+		this.quantidadeElementosVetor=0;
+		
+	}
+	
+	public boolean adicionar(Object elemento)  {
+		
+		aumentarCapacidade();
+		
+		if(this.quantidadeElementosVetor < elementos.length) {
+			
+			this.elementos[this.quantidadeElementosVetor]= elemento;
+			this.quantidadeElementosVetor++;
+			
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean adicionar(int posicao, Object elemento) {
+		
+		validarPosicao(posicao);
+		
+		aumentarCapacidade();
+		
+		for(int i = this.quantidadeElementosVetor; i > posicao; i--) {
+			
+			elementos[i] = elementos[i-1];
+			
+		}
+		
+		elementos[posicao] = elemento;
+		this.quantidadeElementosVetor++;
+		
+		return true;
+	}
+	
+	public void remover(int posicao) {
+		
+		validarPosicao(posicao);
+		
+		for(int i= posicao; i < this.quantidadeElementosVetor - 1; i++) {
+			
+			this.elementos[i] = this.elementos[i+1];
+			
+		}
+		
+		this.elementos[this.quantidadeElementosVetor] = null;
+		this.quantidadeElementosVetor--;
+	}
+	
+	private void aumentarCapacidade() {
+		
+		if(this.elementos.length == this.quantidadeElementosVetor) {
+			
+			Object[] elementosNovos= new Object[this.elementos.length * 2];
+			
+			for(int i=0; i< this.elementos.length; i++) {
+				
+				elementosNovos[i] = this.elementos[i];
+				
+			}
+			
+			this.elementos = elementosNovos;
+			
+		}
+		
+	}
+
+	public int getQuantidadeElementosVetor() {
+		return quantidadeElementosVetor;
+	}
+	
+	public Object buscar(int posicao) {
+		
+		validarPosicao(posicao);
+		
+		return elementos[posicao];
+	}
+	
+	public int buscar(Object elemento) {
+		
+		for(int i=0; i<quantidadeElementosVetor; i++) {
+			
+			if(this.elementos[i].equals(elemento)) {
+				return i;
+			}
+			
+		}
+		
+		return -1;
+	}
+	
+	private void validarPosicao(int posicao) {
+		
+		if(!(posicao >= 0 && posicao < quantidadeElementosVetor)) {
+			
+			throw new IllegalArgumentException("Posição inválida");
+			
+		}
+		
+	}
+
+	@Override
+	public String toString() {
+		
+		StringBuilder s = new StringBuilder();
+		
+		s.append("[");
+		
+		for(int i=0; i< quantidadeElementosVetor-1; i++) {
+			
+			s.append(elementos[i]);
+			s.append(", ");
+			
+		}
+		
+		if(quantidadeElementosVetor > 0) {
+			s.append(elementos[quantidadeElementosVetor-1]);
+			
+		}
+		
+		s.append("]");
+		
+		return s.toString();
+	}
+	
+	
+}

@@ -1,0 +1,39 @@
+package com.mg.estruturadados.listaligada.testes;
+
+import com.mg.estruturadados.listaligada.ListaLigada;
+
+public class Teste002 {
+
+	public static void main(String[] args) {
+		
+		ListaLigada lista= new ListaLigada();
+		lista.adicionar("RJ");
+		lista.adicionar("PE");
+		lista.adicionar("SE");
+		lista.adicionar("AL");
+		
+		for(int i= 0; i< lista.getTamanho(); i++) {
+			System.out.println("Estado: "+lista.get(i).getValor());
+		}
+		
+		System.out.println();
+		System.out.println("Removendo o estado RJ");
+		lista.remover("RJ");
+		System.out.println();
+		
+		for(int i= 0; i< lista.getTamanho(); i++) {
+			System.out.println("Estado: "+lista.get(i).getValor());
+		}
+		
+		System.out.println();
+		System.out.println("Adicionando estado PB");
+		lista.adicionar("PB");
+		System.out.println();
+		
+		for(int i= 0; i< lista.getTamanho(); i++) {
+			System.out.println("Estado: "+lista.get(i).getValor());
+		}
+
+	}
+
+}

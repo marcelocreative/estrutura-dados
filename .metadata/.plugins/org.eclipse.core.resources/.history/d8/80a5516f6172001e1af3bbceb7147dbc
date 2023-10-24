@@ -1,0 +1,17 @@
+package com.mg.estruturadados.vetor.testes;
+
+import com.mg.estruturadados.vetor.Vetor;
+
+public class Teste002 {
+	
+	public static void main(String[] args) {
+		
+		Vetor vetor= new Vetor(2);
+		
+		vetor.adicionar("Elemento 1");
+		vetor.adicionar("Elemento 2");
+		vetor.adicionar("Elemento 3");
+		
+	}
+
+}

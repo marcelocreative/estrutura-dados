@@ -1,0 +1,196 @@
+package com.mg.estruturadados.vetor;
+
+public class Lista<T> {
+	
+	private T[] elementos;
+	private int quantidadeElementosVetor;
+	
+	@SuppressWarnings("unchecked")
+	public Lista(int capacidade){
+		
+		this.elementos= (T[])new Object[capacidade];
+		this.quantidadeElementosVetor=0;
+		
+	}
+	
+	public void limpar() {
+		
+		if(this.quantidadeElementosVetor > 0) {
+			
+			for(int i = 0; i<this.quantidadeElementosVetor; i++) {
+				
+				this.elementos= null;
+				
+			}
+			
+			this.quantidadeElementosVetor= 0;
+		}
+		
+	}
+	
+	public boolean adicionar(T elemento)  {
+		
+		aumentarCapacidade();
+		
+		if(this.quantidadeElementosVetor < elementos.length) {
+			
+			this.elementos[this.quantidadeElementosVetor]= elemento;
+			this.quantidadeElementosVetor++;
+			
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean adicionar(int posicao, T elemento) {
+		
+		validarPosicao(posicao);
+		
+		aumentarCapacidade();
+		
+		for(int i = this.quantidadeElementosVetor; i > posicao; i--) {
+			
+			elementos[i] = elementos[i-1];
+			
+		}
+		
+		elementos[posicao] = elemento;
+		this.quantidadeElementosVetor++;
+		
+		return true;
+	}
+	
+	public boolean remover(int posicao) {
+		
+		validarPosicao(posicao);
+		
+		for(int i= posicao; i < this.quantidadeElementosVetor - 1; i++) {
+			
+			this.elementos[i] = this.elementos[i+1];
+			
+		}
+		
+		this.elementos[this.quantidadeElementosVetor-1] = null;
+		this.quantidadeElementosVetor--;
+		return true;
+	}
+	
+	public boolean remover(T elemento) {
+		
+		int posicao = buscar(elemento);
+		
+		if(posicao >= 0) {
+			return remover(posicao);
+		}
+		return false;
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void aumentarCapacidade() {
+		
+		if(this.elementos.length == this.quantidadeElementosVetor) {
+			
+			T[] elementosNovos=(T[]) new Object[this.elementos.length * 2];
+			
+			for(int i=0; i< this.elementos.length; i++) {
+				
+				elementosNovos[i] = this.elementos[i];
+				
+			}
+			
+			this.elementos = elementosNovos;
+			
+		}
+		
+	}
+
+	public int getQuantidadeElementosVetor() {
+		return quantidadeElementosVetor;
+	}
+	
+	public T buscarElemento(int posicao) {
+		
+		validarPosicao(posicao);
+		
+		return elementos[posicao];
+	}
+	
+	public int buscar(T elemento) {
+		
+		for(int i=0; i<quantidadeElementosVetor; i++) {
+			
+			if(this.elementos[i].equals(elemento)) {
+				return i;
+			}
+			
+		}
+		
+		return -1;
+	}
+	
+	private void validarPosicao(int posicao) {
+		
+		if(!(posicao >= 0 && posicao < quantidadeElementosVetor)) {
+			
+			throw new IllegalArgumentException("Posição inválida");
+			
+		}
+		
+	}
+	
+	public int ultimoIndice(T elemento) {
+		
+		
+		for(int i=this.quantidadeElementosVetor-1; i>=0; i--) {
+			
+			if(this.elementos[i].equals(elemento)) {
+				
+				return i;
+				
+			}
+			
+		}
+		
+		return -1;
+		
+	}
+	
+	public boolean contem(T elemento) {
+		
+		int posicao = buscar(elemento);
+		
+		if(posicao > -1 ) {
+			return true;
+		}
+		
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		
+		StringBuilder s = new StringBuilder();
+		
+		s.append("[");
+		
+		for(int i=0; i< quantidadeElementosVetor-1; i++) {
+			
+			s.append(elementos[i]);
+			s.append(", ");
+			
+		}
+		
+		if(quantidadeElementosVetor > 0) {
+			s.append(elementos[quantidadeElementosVetor-1]);
+			
+		}
+		
+		s.append("]");
+		
+		return s.toString();
+	}
+	
+	
+}

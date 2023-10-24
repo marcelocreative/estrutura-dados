@@ -1,0 +1,40 @@
+package com.mg.estruturadados.fila.desafios;
+
+public class FichaAtendimento {
+
+	private int numeracao;
+	private boolean prioritaria;
+	
+	public FichaAtendimento() {
+		
+	}
+	
+	public FichaAtendimento(int numeracao, boolean prioritaria) {
+		this.numeracao = numeracao;
+		this.prioritaria = prioritaria;
+	}
+
+	public int getNumeracao() {
+		return numeracao;
+	}
+
+	public void setNumeracao(int numeracao) {
+		this.numeracao = numeracao;
+	}
+
+	public boolean isPrioritaria() {
+		return prioritaria;
+	}
+
+	public void setPrioritaria(boolean prioritaria) {
+		this.prioritaria = prioritaria;
+	}
+
+	@Override
+	public String toString() {
+		return "Ficha de atendimento: "+numeracao+" - Prioridade: "+prioritaria;
+	}
+	
+	
+	
+}

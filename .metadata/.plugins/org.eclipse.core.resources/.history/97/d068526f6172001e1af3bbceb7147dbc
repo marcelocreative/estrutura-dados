@@ -1,0 +1,14 @@
+package com.mg.estruturadados.vetor.testes;
+
+import com.mg.estruturadados.vetor.Vetor;
+
+public class Teste001 {
+
+	public static void main(String[] args) {
+		
+		Vetor vetor= new Vetor(5);
+		
+		System.out.println(vetor);
+	}
+
+}

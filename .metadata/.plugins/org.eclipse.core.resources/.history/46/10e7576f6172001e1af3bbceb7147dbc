@@ -1,0 +1,25 @@
+package com.mg.estruturadados.vetor.desafios;
+
+import com.mg.estruturadados.vetor.Lista;
+
+public class Desafio001 {
+	
+	public static void main(String[] args) {
+		
+		Lista<String> lista= new Lista<>(5);
+		
+		lista.adicionar("Bola");
+		lista.adicionar("Caderno");
+		lista.adicionar("Mochila");
+		lista.adicionar("Garrafa");
+		lista.adicionar("Tenis");
+		
+		System.out.println("Elementos: "+lista);
+		
+		String elemento = "Tenis";
+		
+		System.out.print("Contem o elemento "+elemento+": ");
+		System.out.println(lista.contem(elemento));
+	}
+
+}

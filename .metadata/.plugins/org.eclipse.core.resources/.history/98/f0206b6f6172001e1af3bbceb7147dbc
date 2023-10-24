@@ -1,0 +1,46 @@
+package com.mg.estruturadados.listaligada.testes;
+
+import com.mg.estruturadados.listaligada.ListaLigada;
+import com.mg.estruturadados.listaligada.ListaLigadaGenerica;
+
+public class Teste004 {
+
+	public static void main(String[] args) {
+		
+		ListaLigadaGenerica<Cliente> lista= new ListaLigadaGenerica<>();
+		Cliente gael = new Cliente("Gael", "123");
+		Cliente geraldin = new Cliente("Geraldin","456");
+		Cliente	balango= new Cliente("Balango", "789");
+		Cliente linew = new Cliente("Linew", "012");
+		Cliente juliao = new Cliente("Julião", "345");	
+		
+		lista.adicionar(gael);
+		lista.adicionar(geraldin);
+		lista.adicionar(balango);
+		lista.adicionar(linew);
+		
+		for(int i= 0; i< lista.getTamanho(); i++) {
+			System.out.println("Cliente: "+lista.get(i).getValor().getNome());
+		}
+		
+		System.out.println();
+		System.out.println("Removendo o Cliente Gael");
+		lista.remover(gael);
+		System.out.println();
+		
+		for(int i= 0; i< lista.getTamanho(); i++) {
+			System.out.println("Cliente: "+lista.get(i).getValor().getNome());
+		}
+		
+		System.out.println();
+		System.out.println("Adicionando cliente Julião");
+		lista.adicionar(juliao);
+		System.out.println();
+		
+		for(int i= 0; i< lista.getTamanho(); i++) {
+			System.out.println("Número: "+lista.get(i).getValor().getNome());
+		}
+
+	}
+
+}

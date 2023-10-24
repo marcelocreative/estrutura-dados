@@ -1,0 +1,25 @@
+package com.mg.estruturadados.vetor.desafios;
+
+import com.mg.estruturadados.vetor.Lista;
+
+public class Desafio003 {
+
+	public static void main(String[] args) {
+		
+	Lista<String> lista= new Lista<>(5);
+		
+		lista.adicionar("Bola");
+		lista.adicionar("Caderno");
+		lista.adicionar("Mochila");
+		lista.adicionar("Garrafa");
+		lista.adicionar("Tenis");
+		
+		System.out.println("Elementos: "+lista);
+		
+		System.out.println("Remoção realizada com sucesso: "+lista.remover("Tenis"));
+		
+		System.out.println("Elementos: "+lista);
+
+	}
+
+}

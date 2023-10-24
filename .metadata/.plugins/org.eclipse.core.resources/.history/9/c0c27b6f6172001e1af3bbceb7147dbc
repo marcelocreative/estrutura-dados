@@ -1,0 +1,25 @@
+package com.mg.estruturadados.fila.desafios;
+
+import com.mg.estruturadados.fila.Fila;
+
+public class desafio001 {
+
+	public static void main(String[] args) {
+		
+		Fila<Documento> fila= new Fila<>();
+		
+		fila.enfileirar(new Documento("A", 10));
+		fila.enfileirar(new Documento("B", 50));
+		fila.enfileirar(new Documento("C", 3));
+		
+		
+		while(!fila.estaVazia()){
+			
+			Documento doc= fila.desenfileirar();
+			
+			System.out.println("Imprimindo documento "+doc.getNome());
+			
+		}
+	}
+	
+}

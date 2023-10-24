@@ -1,0 +1,47 @@
+package com.mg.estruturadados.pilha.desafios;
+
+import java.util.Scanner;
+
+import com.mg.estruturadados.pilha.Pilha;
+
+public class Desafio001 {
+	
+	public static void main(String[] args) {
+		
+		Pilha<Integer> pilha= new Pilha<>();
+		Scanner scan= new Scanner(System.in);
+		
+		for(int i=0; i<10; i++) {
+			
+			System.out.println("Digite o "+(i+1)+"º valor: ");
+			int elemento = scan.nextInt();
+			
+			if((elemento % 2) == 0) {
+				pilha.empilhar(elemento);
+			}
+			else {
+				
+				if(pilha.estaVazia()) {
+					System.out.println("Pilha já está vazia");
+				}
+				else {
+					System.out.println("Número impar!!! Desempilhando um elemento "+pilha.desempilhar()+" da pilha");
+				}
+				
+				
+			}
+			
+		}
+		
+		scan.close();
+		
+		System.out.println(pilha);
+		
+		while(!pilha.estaVazia()) {
+			System.out.println("Desempilhando o elemento "+pilha.desempilhar());
+		}
+		
+		System.out.println("Todos os elementos foram desempilhados");
+	}
+
+}

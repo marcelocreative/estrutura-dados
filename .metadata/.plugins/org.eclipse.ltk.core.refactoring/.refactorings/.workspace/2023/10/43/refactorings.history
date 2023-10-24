@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;estruturadados-algoritmos-java&apos; to &apos;estruturadados-java&apos;" description="Rename resource &apos;estruturadados-algoritmos-java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/estruturadados-algoritmos-java" name="estruturadados-java" stamp="1698149335932" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;estruturadados-java&apos; to &apos;estruturadados&apos;" description="Rename resource &apos;estruturadados-java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/estruturadados-java" name="estruturadados" stamp="1698149591766" updateReferences="true"/>
+</session>

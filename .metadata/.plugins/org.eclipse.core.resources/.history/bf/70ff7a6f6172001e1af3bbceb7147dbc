@@ -1,0 +1,74 @@
+package com.mg.estruturadados.fila.desafios;
+
+import com.mg.estruturadados.fila.Fila;
+
+public class Desafio002 {
+
+	public static void main(String[] args) {
+		
+		Fila<FichaAtendimento> filaRegular= new Fila<>();
+		Fila<FichaAtendimento> filaPrioridade= new Fila<>();
+		final int MAX_PRIORIDADE = 3;
+		
+		filaRegular.enfileirar(new FichaAtendimento(1, false));
+		filaRegular.enfileirar(new FichaAtendimento(2, false));
+		filaRegular.enfileirar(new FichaAtendimento(3, false));
+		filaRegular.enfileirar(new FichaAtendimento(4, false));
+		filaRegular.enfileirar(new FichaAtendimento(5, false));
+		filaRegular.enfileirar(new FichaAtendimento(7, false));
+		filaRegular.enfileirar(new FichaAtendimento(8, false));
+		filaRegular.enfileirar(new FichaAtendimento(11, false));
+		filaRegular.enfileirar(new FichaAtendimento(12, false));
+		filaRegular.enfileirar(new FichaAtendimento(13, false));
+		filaRegular.enfileirar(new FichaAtendimento(20, false));
+		
+		filaPrioridade.enfileirar(new FichaAtendimento(6, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(9, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(10, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(14, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(15, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(16, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(17, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(18, true));
+		filaPrioridade.enfileirar(new FichaAtendimento(19, true));
+		
+		while(!filaRegular.estaVazia() || !filaPrioridade.estaVazia() ) {
+			
+			
+			int contadorAtendimentoPrioritario=0;
+			
+			while(!filaPrioridade.estaVazia() && contadorAtendimentoPrioritario < MAX_PRIORIDADE) {
+				
+				realizarAtendimento(filaPrioridade);
+				contadorAtendimentoPrioritario++;
+			}
+			
+			if(!filaRegular.estaVazia()) {
+				realizarAtendimento(filaRegular);
+			}
+			
+			if(filaPrioridade.estaVazia()) {
+				while(!filaRegular.estaVazia()) {
+					realizarAtendimento(filaRegular);
+				}
+			}
+			
+		}
+		
+	}
+	
+	public static void realizarAtendimento(Fila<FichaAtendimento> fila) {
+		
+		FichaAtendimento ficha = fila.desenfileirar();
+		
+		if(ficha.isPrioritaria()) {
+			System.out.println("Ficha "+ficha.getNumeracao()+" atendida com prioridade" );
+		}
+		else {
+			System.out.println("Ficha "+ficha.getNumeracao()+" atendida" );
+		}
+		
+		
+	}
+	
+}

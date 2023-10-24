@@ -1,0 +1,15 @@
+package com.mg.estruturadados.pilha.testes;
+
+import com.mg.estruturadados.pilha.Pilha;
+
+public class Teste003 {
+
+	public static void main(String[] args) {
+		
+		Pilha<Integer> pilha= new Pilha<>();
+		System.out.println("Pilha está vazia: "+pilha.estaVazia());
+		pilha.empilhar(1);
+		System.out.println("Pilha está vazia: "+pilha.estaVazia());
+	}
+	
+}
