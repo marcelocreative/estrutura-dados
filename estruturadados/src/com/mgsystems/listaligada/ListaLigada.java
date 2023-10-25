@@ -53,6 +53,45 @@ public class ListaLigada {
 	
 	public void remover(String valor) {
 		
+		Elemento anterior = null;
+		Elemento atual = primeiro;
+		
+		for(int i=0; i< tamanho; i++) {
+			
+			if(atual.getValor().equalsIgnoreCase(valor)) {
+				
+				
+				if(tamanho == 1) {
+					primeiro = null;
+					ultimo = null;
+				}
+				
+				else if(atual == primeiro) {
+					
+					primeiro = atual.getProximo();
+					atual.setProximo(null);
+					
+				}
+				
+				else if(atual == ultimo) {
+					ultimo = anterior;
+					anterior.setProximo(null);
+				}
+				else {
+					anterior.setProximo(atual.getProximo());
+					atual = null;
+				}
+				
+				tamanho--;
+				break;
+				
+			}
+			
+			anterior = atual;
+			atual= atual.getProximo();
+			
+		}
+		
 	}
 	
 	public Elemento get(int posicao) {
