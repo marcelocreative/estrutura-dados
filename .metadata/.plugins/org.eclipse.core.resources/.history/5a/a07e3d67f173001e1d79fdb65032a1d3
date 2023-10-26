@@ -58,7 +58,7 @@ public class ListaLigada<T> {
 		
 		for(int i=0; i< tamanho; i++) {
 			
-			if(atual.getValor().equals(valor)) {
+			if(atual.getValor().equalsIgnoreCase(valor)) {
 				
 				
 				if(tamanho == 1) {

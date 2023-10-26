@@ -1,23 +1,23 @@
 package com.mgsystems.listaligada;
 
-public class Elemento {
+public class Elemento<T> {
 
-	private String valor;
-	private Elemento proximo;
+	private T valor;
+	private Elemento<T> proximo;
 	
-	public Elemento(String valor) {
+	public Elemento(T valor) {
 		this.valor = valor;
 	}
-	public String getValor() {
+	public T getValor() {
 		return valor;
 	}
-	public void setValor(String valor) {
+	public void setValor(T valor) {
 		this.valor = valor;
 	}
-	public Elemento getProximo() {
+	public Elemento<T> getProximo() {
 		return proximo;
 	}
-	public void setProximo(Elemento proximo) {
+	public void setProximo(Elemento<T> proximo) {
 		this.proximo = proximo;
 	}
 	

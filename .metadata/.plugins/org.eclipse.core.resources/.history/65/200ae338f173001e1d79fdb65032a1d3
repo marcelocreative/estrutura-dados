@@ -2,27 +2,27 @@ package com.mgsystems.listaligada;
 
 public class ListaLigada<T> {
 
-	private Elemento<T> primeiro;
-	private Elemento<T> ultimo;
+	private Elemento primeiro;
+	private Elemento ultimo;
 	private int tamanho;
 	
 	public ListaLigada() {
 		this.tamanho = 0;
 	}
 
-	public Elemento<T> getPrimeiro() {
+	public Elemento getPrimeiro() {
 		return primeiro;
 	}
 
-	public void setPrimeiro(Elemento<T> primeiro) {
+	public void setPrimeiro(Elemento primeiro) {
 		this.primeiro = primeiro;
 	}
 
-	public Elemento<T> getUltimo() {
+	public Elemento getUltimo() {
 		return ultimo;
 	}
 
-	public void setUltimo(Elemento<T> ultimo) {
+	public void setUltimo(Elemento ultimo) {
 		this.ultimo = ultimo;
 	}
 
@@ -34,9 +34,9 @@ public class ListaLigada<T> {
 		this.tamanho = tamanho;
 	}
 	
-	public void adicionar(T valor) {
+	public void adicionar(String valor) {
 		
-		Elemento<T> novoElemento= new Elemento<T>(valor);
+		Elemento novoElemento= new Elemento(valor);
 		
 		if(primeiro == null && ultimo==null) {
 			primeiro = novoElemento;
@@ -51,14 +51,14 @@ public class ListaLigada<T> {
 		
 	}
 	
-	public void remover(T valor) {
+	public void remover(String valor) {
 		
-		Elemento<T> anterior = null;
-		Elemento<T> atual = primeiro;
+		Elemento anterior = null;
+		Elemento atual = primeiro;
 		
 		for(int i=0; i< tamanho; i++) {
 			
-			if(atual.getValor().equals(valor)) {
+			if(atual.getValor().equalsIgnoreCase(valor)) {
 				
 				
 				if(tamanho == 1) {
@@ -94,9 +94,9 @@ public class ListaLigada<T> {
 		
 	}
 	
-	public Elemento<T> get(int posicao) {
+	public Elemento get(int posicao) {
 		
-		Elemento<T> atual = primeiro;
+		Elemento atual = primeiro;
 		
 		for(int i=0; i < posicao; i++) {
 			
