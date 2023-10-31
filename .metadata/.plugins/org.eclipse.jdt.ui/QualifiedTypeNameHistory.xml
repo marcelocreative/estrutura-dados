@@ -2,4 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.mg.estruturadados.listaligada.ListaLigada"/>
     <fullyQualifiedTypeName name="com.mg.estruturadados.listaligada.Elemento"/>
+    <fullyQualifiedTypeName name="com.mgsystems.listaligada.IteratorListaLigada"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 </qualifiedTypeNameHistroy>

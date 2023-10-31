@@ -1,0 +1,25 @@
+package com.mgsystems.listaligada;
+
+public class TesteListaLigadaInteiros {
+
+	public static void main(String[] args) {
+		
+		ListaLigada<Integer> lista= new ListaLigada<Integer>();
+		
+		lista.push(1);
+		lista.push(2);
+		lista.push(3);
+		lista.push(4);
+		lista.push(5);
+		
+		System.out.println("Primeiro: "+lista.getPrimeiro().getValor());
+		System.out.println("Último: "+lista.getUltimo().getValor());
+		System.out.println("Tamanho: "+lista.getTamanho());
+		
+		IteratorListaLigada<Integer> iterator = lista.getIteraor();
+		
+		System.out.println(lista.imprimeLista(iterator));
+		
+	}
+
+}

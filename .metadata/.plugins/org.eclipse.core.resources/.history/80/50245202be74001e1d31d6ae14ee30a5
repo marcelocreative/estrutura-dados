@@ -1,0 +1,32 @@
+package com.mgsystems.listaligada;
+
+public class IteratorListaLigada<T> {
+
+	Elemento<T> elemento;
+	
+	public IteratorListaLigada(Elemento<T> elemento) {
+		
+		this.elemento = elemento;
+		
+	}
+	
+	public boolean temProximo() {
+		
+		if(elemento.getProximo() == null) {
+			return false;
+		}
+		else {
+			return true;
+		}
+		
+	}
+	
+	public Elemento<T> getProximo(){
+		
+		System.out.println("Elemento: "+elemento.getValor());
+		
+		elemento= elemento.getProximo();
+		
+		return elemento;
+	}
+}
