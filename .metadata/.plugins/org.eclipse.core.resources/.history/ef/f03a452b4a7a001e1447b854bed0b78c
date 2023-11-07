@@ -1,0 +1,31 @@
+package com.mgsystems.listaligada;
+
+public class TesteListaLigadaString {
+
+	public static void main(String[] args) {
+		
+		ListaLigada<String> lista= new ListaLigada<String>();
+		
+	
+		
+		lista.adicionarPorPosicao(0, "RJ");
+		lista.adicionarPorPosicao(1, "PE");
+		lista.adicionarPorPosicao(2, "SE");
+		lista.adicionarNoComeco("AL");
+		lista.adicionarNoFinal("DF");
+		
+		lista.removerPorPosicao(0);
+		//lista.removerPorPosicao(3);
+		
+		
+		System.out.println("Primeiro: "+lista.getPrimeiro().getValor());
+		System.out.println("Último: "+lista.getUltimo().getValor());
+		System.out.println("Tamanho: "+lista.getTamanho());
+		
+		IteratorListaLigada<String> iterator = lista.getIteraor();
+		
+		System.out.println(lista.imprimeLista(iterator));
+
+	}
+
+}

@@ -4,4 +4,7 @@
     <fullyQualifiedTypeName name="com.mg.estruturadados.listaligada.Elemento"/>
     <fullyQualifiedTypeName name="com.mgsystems.listaligada.IteratorListaLigada"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="com.mgsystems.listaligada.Elemento"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 </qualifiedTypeNameHistroy>

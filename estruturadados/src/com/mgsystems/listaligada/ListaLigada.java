@@ -111,9 +111,39 @@ public class ListaLigada<T> {
 		tamanho++;
 	}
 	
-
+	public Elemento<T> removerDoFInal(){
+		
+		Elemento<T> anterior = null;
+		Elemento<T> atual = primeiro;
+		Elemento<T> elementoRetorno= null;
+		
+		if(tamanho>0) {
+			
+			for(int i=0; i<tamanho; i++) {
+				
+				if(tamanho == 1) {
+					elementoRetorno = atual;
+					primeiro = null;
+					ultimo = null;
+				}
+				else if(i == tamanho - 1) {
+					elementoRetorno = ultimo;
+					ultimo = anterior;
+					anterior.setProximo(null);
+					break;
+				}
+				
+				anterior = atual;
+				atual= atual.getProximo();
+			}
+			
+		}
+		
+		tamanho--;
+		return elementoRetorno;
+	}
 	
-	public Elemento<T> remover(T valor) {
+public Elemento<T> removerPorValor(T valor) {
 		
 		Elemento<T> anterior = null;
 		Elemento<T> atual = primeiro;
@@ -158,6 +188,41 @@ public class ListaLigada<T> {
 		return elementoRetorno;
 		
 	}
+
+	public void removerPorPosicao(int posicao) {
+		
+		if(posicao >= tamanho) {
+			throw new IllegalArgumentException("A posição "+posicao+" é inválida");
+		}
+		else if(posicao == 0) {
+			System.out.println("remover primeiro elemento");
+			Elemento<T> proximo = primeiro.getProximo();
+			primeiro.setProximo(null);
+			primeiro = proximo;
+			
+		}
+		else if(posicao == tamanho-1) {
+			System.out.println("remover último elemento");
+			Elemento<T> penaultimo = get(tamanho-2);
+			penaultimo.setProximo(null);
+			ultimo = penaultimo;
+			
+		}
+		else {
+			System.out.println("remover elemento do meio");
+			Elemento<T> anterior = get(posicao-1);
+			Elemento<T> proximo = get(posicao+1);
+			Elemento<T> atual = get(posicao);
+			
+			anterior.setProximo(proximo);
+			atual.setProximo(null);
+		}
+		
+		tamanho--;
+		
+	}
+	
+	
 	
 	public Elemento<T> get(int posicao) {
 		

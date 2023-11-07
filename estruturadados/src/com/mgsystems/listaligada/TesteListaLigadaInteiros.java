@@ -15,13 +15,18 @@ public class TesteListaLigadaInteiros {
 		lista.adicionarPorPosicao(1, 2);
 		lista.adicionarNoComeco(0);
 		
-		System.out.println("Primeiro: "+lista.getPrimeiro().getValor());
-		System.out.println("Último: "+lista.getUltimo().getValor());
-		System.out.println("Tamanho: "+lista.getTamanho());
-		
-		IteratorListaLigada<Integer> iterator = lista.getIteraor();
-		
-		System.out.println(lista.imprimeLista(iterator));
+		if(lista.getTamanho()>0) {
+			System.out.println("Primeiro: "+lista.getPrimeiro().getValor());
+			System.out.println("Último: "+lista.getUltimo().getValor());
+			System.out.println("Tamanho: "+lista.getTamanho());
+			
+			IteratorListaLigada<Integer> iterator = lista.getIteraor();
+			
+			System.out.println(lista.imprimeLista(iterator));
+		}
+		else {
+			System.out.println("Não há itens a serem exibidos");
+		}
 		
 	}
 

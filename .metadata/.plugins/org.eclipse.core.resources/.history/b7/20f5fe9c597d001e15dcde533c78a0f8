@@ -1,0 +1,37 @@
+package com.mgsystems.listaligada;
+
+public class TesteListaLigadaString {
+
+	public static void main(String[] args) {
+		
+		ListaLigada<String> lista= new ListaLigada<String>();
+		
+	
+		
+		lista.adicionarNoFinal("RJ");
+		lista.adicionarNoFinal("PE");
+		lista.adicionarNoFinal("SE");
+		lista.adicionarNoFinal("AL");
+		
+		System.out.println(lista.removerDoFInal());
+		
+		//lista.removerPorPosicao(0);
+		//lista.removerPorPosicao(3);
+		//lista.removerPorPosicao(1);
+		
+		if(lista.getTamanho()>0) {
+			System.out.println("Primeiro: "+lista.getPrimeiro().getValor());
+			System.out.println("Último: "+lista.getUltimo().getValor());
+			System.out.println("Tamanho: "+lista.getTamanho());
+			
+			IteratorListaLigada<String> iterator = lista.getIteraor();
+			
+			System.out.println(lista.imprimeLista(iterator));
+		}
+		else {
+			System.out.println("Não há itens a serem exibidos");
+		}
+
+	}
+
+}
