@@ -1,0 +1,15 @@
+package com.mgsystems.pilha;
+
+import com.mgsystems.listaligada.ListaLigada;
+
+public class Pilha<T> {
+
+	ListaLigada<T> lista;
+	
+	public Pilha() {
+		lista= new ListaLigada<T>();
+	}
+	
+	
+	
+}

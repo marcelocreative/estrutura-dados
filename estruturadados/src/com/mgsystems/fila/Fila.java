@@ -20,7 +20,13 @@ public class Fila<T> {
 	
 	public void remover() {
 		
-		lista.removerPorValor(lista.getPrimeiro().getValor());
+		if(lista.getTamanho()>0) {
+			lista.removerPorValor(lista.getPrimeiro().getValor());
+		}
+		else {
+			throw new RuntimeException("Fila está vazia");
+		}
+		
 		
 	}
 	
