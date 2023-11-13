@@ -1,0 +1,32 @@
+package com.mgsystems.fila;
+
+import com.mgsystems.listaligada.IteratorListaLigada;
+
+public class TesteFilaInteiros {
+	
+	public static void main(String[] args) {
+		
+		Fila fila = new Fila<Integer>();
+		
+		fila.adicionar(1);
+		fila.adicionar(2);
+		fila.adicionar(3);
+		fila.adicionar(4);
+		fila.adicionar(5);
+		
+		if(fila.getTamanho()>0) {
+			System.out.println("Primeiro: "+fila.getPrimeiro().getValor());
+			System.out.println("Último: "+fila.getUltimo().getValor());
+			System.out.println("Tamanho: "+fila.getTamanho());
+			
+			IteratorListaLigada<Integer> iterator = fila.getIteraor();
+			
+			System.out.println(fila.imprimirLista(iterator));
+		}
+		else {
+			System.out.println("Não há itens a serem exibidos");
+		}
+		
+	}
+
+}

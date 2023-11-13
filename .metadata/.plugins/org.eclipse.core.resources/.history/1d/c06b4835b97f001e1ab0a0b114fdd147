@@ -1,0 +1,19 @@
+package com.mgsystems.fila;
+
+public class TesteFilaInteiros {
+	
+	public static void main(String[] args) {
+		
+		Fila fila = new Fila<Integer>();
+		
+		fila.adicionar(1);
+		fila.adicionar(2);
+		fila.adicionar(3);
+		fila.adicionar(4);
+		fila.adicionar(5);
+		
+		
+		
+	}
+
+}

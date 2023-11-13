@@ -5,6 +5,8 @@
     <fullyQualifiedTypeName name="com.mgsystems.listaligada.IteratorListaLigada"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
-    <fullyQualifiedTypeName name="com.mgsystems.listaligada.Elemento"/>
     <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="com.mgsystems.listaligada.ListaLigada"/>
+    <fullyQualifiedTypeName name="com.mgsystems.fila.Fila"/>
+    <fullyQualifiedTypeName name="com.mgsystems.listaligada.Elemento"/>
 </qualifiedTypeNameHistroy>

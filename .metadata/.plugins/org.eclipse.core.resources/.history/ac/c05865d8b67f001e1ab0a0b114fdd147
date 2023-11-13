@@ -1,0 +1,13 @@
+package com.mgsystems.fila;
+
+import com.mgsystems.listaligada.ListaLigada;
+
+public class Fila<T> {
+	
+	ListaLigada<T> lista;
+	
+	public Fila() {
+		lista = new ListaLigada<T>();
+	}
+
+}

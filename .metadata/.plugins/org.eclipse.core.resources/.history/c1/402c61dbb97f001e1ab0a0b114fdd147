@@ -1,0 +1,30 @@
+package com.mgsystems.fila;
+
+import com.mgsystems.listaligada.ListaLigada;
+
+public class Fila<T> {
+	
+	ListaLigada<T> lista;
+	
+	public Fila() {
+		lista = new ListaLigada<T>();
+	}
+	
+	public void adicionar(T valor) {
+		
+		lista.adicionarNoFinal(valor);
+		
+	}
+	
+	
+	public int getTamanho() {
+		return lista.getTamanho();
+	}
+	
+	public String imprimirFila() {
+		
+		return lista.imprimeLista(iterator);
+		
+	}
+
+}

@@ -222,8 +222,6 @@ public Elemento<T> removerPorValor(T valor) {
 		
 	}
 	
-	
-	
 	public Elemento<T> get(int posicao) {
 		
 		Elemento<T> atual = primeiro;
